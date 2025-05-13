@@ -33,6 +33,10 @@ graph TB
     linkStyle 7 stroke:#2ecd71,stroke-width:2px;
 ```
 
+*en este diagrama vemos que el* **Usuario** *no tiene una relacion directa con los demas componentes, 
+solo se maneja los perfiles con sus roles para el ingreso a la app, luego tenemos un flujo donde el* **Aprendiz** 
+*pertenece a un ficha la cual esta asociada con un* **Programa de Formacion** *y esta ficha es gestionada por un* **Instructor** *a la vez el aprendiz requere una* **Carta de practica** *que incluye de información* **Empresa, Estado Aprendiz y Modalidad**.
+
 ## -DIAGRAMA DE OBJETOS
 
 ```mermaid
