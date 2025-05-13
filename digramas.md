@@ -128,6 +128,8 @@ solo se maneja los perfiles con sus roles para el ingreso a la app, luego tenemo
     CartaPractica -->Empresa:Incluye
 ```
 
+*en el diagrama de objetos podemos ver el mismo flijo que en el digrama de componentes solo que en este podemos ver al detalle cada uno de los traubitos que tiene cada una de las clases involucradas en es sofware.*
+
 ## -DIAGRAMA DE CLASES
 
 ```mermaid
@@ -242,4 +244,34 @@ classDiagram
     CartaPractica "0..*"-->"1" Modalidad : Incluye
     CartaPractica "0..*"-->"1" EstadoAprendiz : Incluye
     CartaPractica "0..*"-->"1" Empresa : Incluye
+```
+
+*En el diagrama de clases podemos observar adicinalmente todas las* **Funciones (Metodos)** *que se oueden realizar en cada una de las clases como:*  
+- *Actualizar*  
+- *Eliminar*  
+- *Subir datos*  
+- *Visualizar datos*
+
+## DIGRAMA DE SECUENCIAS
+
+```mermaid
+sequenceDiagram
+    actor Usuario
+    participant EmpresaController
+    participant BaseDeDatos
+
+    Usuario ->> EmpresaController: crearEmpresa(datosEmpresa)
+    activate EmpresaController
+    EmpresaController ->> BaseDeDatos: validarDatos(datosEmpresa)
+    activate BaseDeDatos
+    BaseDeDatos -->> EmpresaController: válido
+    deactivate BaseDeDatos
+
+    EmpresaController ->> BaseDeDatos: guardarEmpresa(datosEmpresa)
+    activate BaseDeDatos
+    BaseDeDatos -->> EmpresaController: éxito
+    deactivate BaseDeDatos
+
+    EmpresaController -->> Usuario: "Empresa creada exitosamente"
+    deactivate EmpresaController
 ```
